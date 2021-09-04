@@ -3,6 +3,7 @@ package gpio0
 import (
 	"fmt"
 	"os"
+	"github.com/jaymzee/morse"
 )
 
 // LED represents an LED connected to a gpio pin
@@ -34,6 +35,11 @@ func (led *LED) Set(v bool) error {
 	}
 	_, err := led.file.WriteAt([]byte{b}, 0)
 	return err
+}
+
+func (led *LED) Write(p []byte) (int, error) {
+	morse.Send(led, p)
+	return len(p), nil
 }
 
 // The functions below satisfy a very simple On/Off interface.
