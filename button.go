@@ -7,7 +7,6 @@ import (
 
 // Button represents a button connected to a gpio pin
 type Button struct {
-	pin  int
 	file *os.File
 }
 
@@ -20,7 +19,7 @@ func OpenButton(pin int) (*Button, error) {
 		return nil, err
 	}
 
-	return &Button{pin, file}, nil
+	return &Button{file}, nil
 }
 
 // Value returns the value read at the gpio pin
