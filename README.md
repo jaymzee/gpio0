@@ -88,5 +88,3 @@ Pin is the gpio pin number or led number for onboard leds
 `func (led *LED) Set(v bool) error`
 
 Set sets the LED to v (active low)
-package gpio0 // import "github.com/jaymzee/gpio0"
-
