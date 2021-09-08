@@ -2,7 +2,6 @@ package gpio0
 
 import (
 	"fmt"
-	"github.com/jaymzee/morse"
 	"os"
 )
 
@@ -55,10 +54,6 @@ func (led *LED) Set(v bool) error {
 	bytes := []byte(fmt.Sprintf("%d", i))
 	_, err := led.file.WriteAt(bytes, 0)
 	return err
-}
-
-func (led *LED) Write(p []byte) (int, error) {
-	return morse.Send(led, p)
 }
 
 // The functions below satisfy a very simple On/Off interface.
