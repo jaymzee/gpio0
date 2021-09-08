@@ -90,9 +90,3 @@ Pin is the gpio pin number or led number for onboard leds
 Set sets the LED to v (active low)
 package gpio0 // import "github.com/jaymzee/gpio0"
 
-
-type Button struct{ ... }
-    func OpenButton(pin int) (*Button, error)
-type LED struct{ ... }
-    func OpenGPIO(pin int, activeHi bool) (*LED, error)
-    func OpenLocal(num int) (*LED, error)
